@@ -13,7 +13,7 @@ sword = False
 #ROOM 1
 
 def room_1():
-  print (colored("A Blood-covered Room", 'green'))
+  print (colored("\nA Blood-covered Room", 'green'))
   print ("You are in a big room with blood covered walls.")
   print ("It's really dark and all you can see is three doors.")
   print ("They lead east, north, and west.")
@@ -38,7 +38,7 @@ def room_1():
 # ROOM 2
 
 def room_2():
-  print (colored("A Small Passageway", 'green'))
+  print (colored("\nA Small Passageway", 'green'))
   print ("This room has a really low ceiling and you must crouch to walk.")
   print ("You see a passage leading west and a passage leading north.")
   print ("On the far end of the first one, you can see a bright light.")
@@ -70,12 +70,12 @@ def room_3():
   global sword
 
   if beast_alive:
-    print (colored("The Beast's Den", 'green'))
+    print (colored("\nThe Beast's Den", 'green'))
     print ("As you walk into the room, you understand where the smell came from.")
     print ("The floor is littered with rotting corpses.")
     print ("Suddenly you hear a growl and a huge beast appears in front of you.")
-    print ("You see a passage to the east, a flaming torch on the ground,")
-    print ("a skeleton holding a sword, and a hole on the far side of the room.")
+    print ("You see a passage to the east, a flaming " + colored("torch", 'yellow') + " on the ground,")
+    print ("a skeleton holding a " + colored("sword", 'yellow') + ", and a hole on the far side of the room.")
     print ("The passage to the south leads back to the second room.")
     print (colored("Obvious exits: [south, east, hole]", 'cyan'))
     print ("What do you do?")
@@ -113,10 +113,10 @@ def room_3():
       room_3()
 
   else:
-    print (colored("The Beast's Den", 'green'))
+    print (colored("\nThe Beast's Den", 'green'))
     print ("The floor is littered with rotting corpses.")
-    print ("You see a passage to the east, a flaming torch on the ground,")
-    print ("a skeleton holding a sword and a hole on the far side of the room.")
+    print ("You see a passage to the east, a flaming " + colored("torch", 'yellow') + " on the ground,")
+    print ("a skeleton holding a " + colored("sword", 'yellow') + ", and a hole on the far side of the room.")
     print ("The passage to the south leads back to the second room.")
     print (colored("Obvious exits: [south, east, hole]", 'cyan'))
     print ("What do you do?")
@@ -152,7 +152,7 @@ def room_4():
   global dragon_alive
 
   if dragon_alive:
-    print (colored("The Dragon's Lair", 'green'))
+    print (colored("\nThe Dragon's Lair", 'green'))
     print ("The room is huge, and for good reasons. It is the home of a dragon.")
 
     if sword:
@@ -173,7 +173,8 @@ def room_4():
     game_over("The dragon leaps in front of you and with a roar begins to breath fire, roasting you alive.")
 
   else:
-    
+
+    print (colored("\nThe Dragon's Lair", 'green'))
     print ("There is a passage to the north, one to the east, one to the")
     print ("south and one to the west.")
     print (colored("Obvious exits: [north, east, south, west]", 'cyan'))
