@@ -1,4 +1,6 @@
-from sys import exit
+from sys import exit 
+from colorama import init
+from termcolor import colored
 
 #---------------VARS--------------------
 
@@ -76,15 +78,15 @@ def room_3():
       of you. You don't have the time to do anything, because the beast opens it's 
       jaws and rips off your head.""")
     elif "torch" in choice:
-      print ("""You take the flaming torch and wave it in front of the beast. 
+      print (colored("""You take the flaming torch and wave it in front of the beast. 
       It leaps back in fear, stumbles and falls in the hole, disappearing from 
-      the room.""")
+      the room.""", 'yellow'))
       beast_alive = False
       room_3()
     elif "sword" in choice:
-      print ("""You take the sword. Suddenly, it starts emanating a faint glow
+      print (colored("""You take the sword. Suddenly, it starts emanating a faint glow
       and you feel invincible. Without knowing how, you jump forward and slay
-      the beast!""")
+      the beast!""", 'yellow'))
       beast_alive = False
       sword = True
       room_3()
@@ -109,11 +111,11 @@ def room_3():
     if "east" in choice:
       room_4()
     elif "torch" in choice:
-      print ("""You take the flaming torch and wave it in the air.
-  You feel stupid and put it down.""")
+      print (colored("""You take the flaming torch and wave it in the air.
+  You feel stupid and put it down.""", 'yellow'))
       room_3()
     elif "sword" in choice:
-      print ("""You take the sword.""")
+      print (colored("You take the sword.", 'yellow'))
       sword = True
       room_3()
     elif "hole" in choice:
@@ -137,7 +139,7 @@ def room_4():
     print ("The room is huge, and for good reasons. It is the home of a dragon.")
 
     if sword:
-      print ("""Suddenly your sword starts to glow. An unknown force urges you to leap forward and drive the sword in the heart of the dragon. It dies with horrible screams.""")
+      print (colored("""Suddenly your sword starts to glow. An unknown force urges you to leap forward and drive the sword in the heart of the dragon. It dies with horrible screams.""", 'yellow'))
       dragon_alive = False
       room_4()
     else:
@@ -173,6 +175,7 @@ def room_4():
 # START
 
 def start():
+  init()
   room_1()
 
 # GAME OVER
@@ -187,7 +190,8 @@ def game_over(s):
   dragon_alive = True
   sword = False
 
-  print (s)
+  
+  print (colored(s, 'red'))
   print ("Do you want to play again? (y / n)")
 
   choice = input("")
